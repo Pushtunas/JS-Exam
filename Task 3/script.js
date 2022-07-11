@@ -12,3 +12,18 @@ turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'https://api.github.com/users';
+
+const rezultatai = document.querySelector('#output');
+const btn = document.querySelector('#btn');
+btn.addEventListener('click', gettData);
+
+function gettData() {
+    fetch(ENDPOINT).then(function (res) {
+        return res.json();
+    }).then(function (data) {
+        console.log(data);
+    }).catch(function (e) {
+        console.log(e);
+    })
+}
+
